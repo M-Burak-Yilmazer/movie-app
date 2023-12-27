@@ -93,10 +93,15 @@ function Login() {
             </Button>
             <Button
               type="button"
-              className=" mt-2 flex text-center items-center"
+              className="bg-orange-500 flex text-center mt-2 items-center"
               onClick={() => signUpProvider()}
             >
               Continue with Google
+              <img
+                src="./google.png"
+                style={{ width: "20px", marginLeft: "1rem" }}
+                alt="w"
+              />
             </Button>
           </form>
         </div>

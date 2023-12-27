@@ -57,8 +57,8 @@ function Register() {
             className=" absolute inset-[2px] rounded-[8px] z-[10] form flex flex-col p-10"
           >
             <h2 className="text-red-400 text-2xl font-[500] text-center mb-5 ]">
-            Register App
-          </h2>
+              Register App
+            </h2>
             <div>
               <div className="grid grid-flow-col text-purple-950 justify-stretch space-x-4">
                 <FloatingLabel
@@ -110,10 +110,11 @@ function Register() {
             </Button>
             <Button
               type="button"
-              className=" mt-2 flex text-center items-center"
+              className="bg-orange-500 flex text-center mt-2 items-center"
               onClick={() => signUpProvider()}
             >
               Continue with Google
+              <img src="./google.png" style={{width:"20px" , marginLeft:"1rem"}} alt="w"/>
             </Button>
           </form>
         </div>
