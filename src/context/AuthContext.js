@@ -18,7 +18,7 @@ const AuthContextProvider = ({ children }) => {
         password
       );
       console.log(response);
-      Navigate("/");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -26,6 +26,7 @@ const AuthContextProvider = ({ children }) => {
   const signIn = async (email, password) => {
     try {
       let user = await signInWithEmailAndPassword(auth, email, password);
+      navigate("/");
       console.log(user);
     } catch (error) {
       console.log(error.message);
