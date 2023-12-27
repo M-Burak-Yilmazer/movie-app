@@ -14,7 +14,7 @@ function Login() {
   const [movies, setMovies] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signUpProvider } = useContext(AuthContext);
 
   const apiKey = process.env.REACT_APP_API_KEY;
   const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=the%godfather`;
@@ -54,7 +54,7 @@ function Login() {
             className=" absolute inset-[2px] rounded-[8px] z-[10] form flex flex-col p-20"
           >
             <h2 className="text-red-400 text-2xl font-[500] text-center mb-5 ]">
-            Login App
+              Login App
             </h2>
             <div>
               <div className="mb-2 block">
@@ -90,6 +90,13 @@ function Login() {
 
             <Button type="submit" className="mt-2">
               Login
+            </Button>
+            <Button
+              type="button"
+              className=" mt-2 flex text-center items-center"
+              onClick={() => signUpProvider()}
+            >
+              Continue with Google
             </Button>
           </form>
         </div>
