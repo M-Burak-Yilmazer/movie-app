@@ -1,9 +1,11 @@
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../auth/firebase";
 import {
+    GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -70,8 +72,25 @@ const AuthContextProvider = ({ children }) => {
       }
     });
   };
+   const signUpProvider = () => {
+     
+     const provider = new GoogleAuthProvider();
+    
+     signInWithPopup(auth, provider)
+       .then((result) => {
+         console.log(result);
+         navigate("/");
+       })
+       .catch((error) => {
+         // Handle Errors here.
+         console.log(error);
+       });
+   };
 
-  const values = { createUser, signIn, logout, currentUser };
+
+
+
+  const values = { createUser, signIn, logout, currentUser, signUpProvider };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };

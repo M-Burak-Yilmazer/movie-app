@@ -14,12 +14,12 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [movies, setMovies] = useState([]);
-  const { createUser } = useContext(AuthContext);
+  const { createUser, signUpProvider } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const displayName = `${name} ${lastName}`;
-    createUser(email, password,displayName);
+    const displayName = `${name}${lastName}`;
+    createUser(email, password, displayName);
   };
 
   const apiKey = process.env.REACT_APP_API_KEY;
@@ -37,7 +37,7 @@ function Register() {
 
   return (
     <div className="flex justify-center">
-      <div className="form-image mx-auto hidden md:block">
+      <div className="form-image flex-1 mx-auto hidden lg:block">
         <img
           src={
             movies[0]
@@ -104,6 +104,14 @@ function Register() {
 
             <Button type="submit" className="mt-2">
               Register new account
+            </Button>
+            <Button
+              type="button"
+              className=" mt-2 flex text-center items-center"
+              onClick={() => signUpProvider()}
+            >
+              Continue with Google
+            
             </Button>
           </form>
         </div>
