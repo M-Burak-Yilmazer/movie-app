@@ -23,55 +23,58 @@ const NavbarPart = () => {
   };
 
   return (
-    <Navbar fluid className="h-[70px] p-3 items-center">
-      <div>
-        <Link to="/">
-          <span className="self-center flex flex-row items-center whitespace-nowrap text-xl font-semibold dark:text-white">
-            <img
-              src="/favicon.ico"
-              className="mr-3 h-6 sm:h-9"
-              alt="Flowbite React Logo"
-            />
-            Movie App
-          </span>
-        </Link>
-      </div>
-      <div className="flex md:order-2 justify-center items-center">
-        <div className="flex items-center me-3">
-          <h1 className="lowercase text-md font-semibold dark:text-white">
-            {currentUser && currentUser.displayName}
-          </h1>
+    <>
+      <Navbar className="bg-slate-100 fixed z-20 w-full top-0 h-[70px] flex justify-between p-3 items-center">
+        <div>
+          <Link to="/">
+            <span className="self-center flex flex-row items-center whitespace-nowrap text-xl font-semibold dark:text-white">
+              <img
+                src="/favicon.ico"
+                className="mr-3 h-6 sm:h-9"
+                alt="Flowbite React Logo"
+              />
+              Movie App
+            </span>
+          </Link>
         </div>
-        <Switch />
-        <Dropdown
-          arrowIcon={false}
-          inline
-          label={
-            <>
-              {renderAvatar()}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="red"
-                className="w-6 h-6"
-              >
-                {/* Your existing dropdown icon path */}
-              </svg>
-            </>
-          }
-        >
-          <Dropdown.Header>
-            <Dropdown.Item>
-              <NavLink to="/register">Register </NavLink>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <NavLink to="/login">Login </NavLink>
-            </Dropdown.Item>
-          </Dropdown.Header>
-          <Dropdown.Item onClick={() => logout()}>Sign out</Dropdown.Item>
-        </Dropdown>
-      </div>
-    </Navbar>
+        <div className="flex md:order-2 justify-center items-center">
+          <div className="flex items-center me-3">
+            <h1 className="lowercase text-md font-semibold dark:text-white">
+              {currentUser && currentUser.displayName}
+            </h1>
+          </div>
+          <Switch />
+          <Dropdown
+            arrowIcon={false}
+            inline
+            label={
+              <>
+                {renderAvatar()}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="red"
+                  className="w-6 h-6"
+                >
+                  {/* Your existing dropdown icon path */}
+                </svg>
+              </>
+            }
+          >
+            <Dropdown.Header>
+              <Dropdown.Item>
+                <NavLink to="/register">Register </NavLink>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <NavLink to="/login">Login </NavLink>
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => logout()}>Sign out</Dropdown.Item>
+            </Dropdown.Header>
+          </Dropdown>
+        </div>
+      </Navbar>
+      <div className="h-[55px]"></div>
+    </>
   );
 };
 

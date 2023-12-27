@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
-    <div>
+    <div className="bg-slate-200 dark:bg-gray-700 ">
       <NavbarPart />
       <Router />
       <ToastContainer />

@@ -35,11 +35,11 @@ const MovieCard = () => {
   console.log(newkey);
 
   return (
-    <div className="flex  flex-col lg:flex-row justify-center items-center">
-      <div className="hidden md:block ms-5  mt-5  flex-1 mx-auto   justify-center items-center">
+    <div className="flex  dark:bg-slate-700 flex-col lg:flex-row justify-center items-center">
+      <div className="hidden sm:block ms-5  mt-5  flex-1    ">
         <iframe
-          width={760}
-          height={400}
+          width={500}
+          height={350}
           src={`https://www.youtube.com/embed/${key}`}
           title="YouTube video player"
           frameBorder={0}
@@ -50,7 +50,7 @@ const MovieCard = () => {
       <div className="flex-1 flex justify-center items-center mt-5">
         <div
           href="#"
-          className="  flex items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-2xl md:h-[400px] hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+          className="  flex items-center  bg-slate-50 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-2xl md:h-[400px] hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 min-w-[400px]"
         >
           <img
             className="flex-1 w-[100px] sm:w-[300px] md:h-[400px]  rounded-t-lg  md:w-48 md:rounded-none md:rounded-s-lg"
@@ -60,8 +60,10 @@ const MovieCard = () => {
           <div className="flex-1 flex-col justify-between p-4 leading-normal">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {movie.original_title}
-              <span> ({movie.release_date})</span>
             </h5>
+            <p className="mb-3 font-semibold line-clamp-3 md:line-clamp-none   text-gray-700 dark:text-gray-400">
+              {"Release Date : " + movie.release_date}
+            </p>
             <p className="mb-3  line-clamp-3 md:line-clamp-none  font-normal text-gray-700 dark:text-gray-400">
               {movie.overview}
             </p>

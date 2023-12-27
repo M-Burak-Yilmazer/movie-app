@@ -37,7 +37,7 @@ function Register() {
 
   return (
     <div className="flex justify-center">
-      <div className="form-image flex-1 mx-auto hidden lg:block">
+      <div className=" w-min-[100px] flex-1  mx-auto hidden md:block ">
         <img
           src={
             movies[0]
@@ -47,10 +47,10 @@ function Register() {
               : "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
           }
           alt=""
-          className="mx-auto h-screen w-full"
+          className="mx-auto h-screen w-full "
         />
       </div>
-      <div className="relative overflow-hidden flex-1 h-screen items-start dark:bg-[#23242a]">
+      <div className="relative  flex-1 h-screen items-start dark:bg-[#23242a]">
         <div className="login-box">
           <form
             onSubmit={handleSubmit}
@@ -111,7 +111,6 @@ function Register() {
               onClick={() => signUpProvider()}
             >
               Continue with Google
-            
             </Button>
           </form>
         </div>

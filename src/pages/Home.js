@@ -79,15 +79,15 @@ function Home() {
         </div>
       </form>
 
-      <div className="text-center mt-3 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-3 justify-center items-center">
+      <div className="text-center mt-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 p-3 justify-center items-center">
         {movies.map((item) => (
           <div
             key={item.id}
-            className="w-[300px] h-[500px]   max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto text-center"
+            className="w-[350px] h-[500px]   max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto text-center"
           >
             <div>
               <img
-                className="w-[300px] h-[350px] p-8 rounded-t-lg"
+                className="w-[330px] h-[350px] mx-auto p-8 rounded-t-lg"
                 src={
                   item.backdrop_path
                     ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
