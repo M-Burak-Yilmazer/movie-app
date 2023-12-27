@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+  body {
+    @apply dark:bg-blue-950;
+  }
+
+
 @layer components {
   .login-box {
     @apply mt-[10vh] mx-auto overflow-hidden relative w-[380px] h-[500px]
-        rounded-[8px] bg-gray-100 dark:bg-[#1c1c1c]
-       
-        
+        rounded-[8px] bg-gray-100 dark:bg-[#1c1c1c];
   }
 }

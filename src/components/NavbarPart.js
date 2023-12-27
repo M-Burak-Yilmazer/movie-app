@@ -2,21 +2,23 @@
 
 import { Avatar, Dropdown, DropdownHeader, Navbar } from "flowbite-react";
 import Switch from "./Switch";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const NavbarPart = () => {
   return (
-    <Navbar fluid rounded className="dark:bg-purple-500">
-      <Navbar.Brand href="#">
-        <img
-          src="/favicon.ico"
-          className="mr-3 h-6 sm:h-9"
-          alt="Flowbite React Logo"
-        />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Movie App
-        </span>
-      </Navbar.Brand>
+    <Navbar fluid className=" h-[70px] p-3  items-center">
+      <div>
+        <Link to="/">
+          <span className="self-center flex flex-row items-center whitespace-nowrap text-xl font-semibold dark:text-white">
+            <img
+              src="/favicon.ico"
+              className="mr-3 h-6 sm:h-9"
+              alt="Flowbite React Logo"
+            />
+             Movie App
+          </span>
+        </Link>
+      </div>
       <div className="flex md:order-2">
         <Switch />
         <Dropdown
@@ -26,7 +28,7 @@ const NavbarPart = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              fill="currentColor"
+              fill="red"
               class="w-6 h-6"
             >
               <path
@@ -48,7 +50,6 @@ const NavbarPart = () => {
 
           <Dropdown.Item>Sign out</Dropdown.Item>
         </Dropdown>
-      
       </div>
     </Navbar>
   );
