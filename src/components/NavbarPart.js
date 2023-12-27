@@ -3,8 +3,11 @@
 import { Avatar, Dropdown, DropdownHeader, Navbar } from "flowbite-react";
 import Switch from "./Switch";
 import { NavLink, Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const NavbarPart = () => {
+  const { logout } = useContext(AuthContext);
   return (
     <Navbar fluid className=" h-[70px] p-3  items-center">
       <div>
@@ -15,7 +18,7 @@ const NavbarPart = () => {
               className="mr-3 h-6 sm:h-9"
               alt="Flowbite React Logo"
             />
-             Movie App
+            Movie App
           </span>
         </Link>
       </div>
@@ -48,7 +51,7 @@ const NavbarPart = () => {
             </Dropdown.Item>
           </Dropdown.Header>
 
-          <Dropdown.Item>Sign out</Dropdown.Item>
+          <Dropdown.Item onClick={logout}>Sign out</Dropdown.Item>
         </Dropdown>
       </div>
     </Navbar>

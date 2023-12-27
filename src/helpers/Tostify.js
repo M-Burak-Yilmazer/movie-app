@@ -12,7 +12,7 @@ export const success = (msg) => {
     theme: "dark",
   });
 };
-export const error = (msg) => {
+export const errorMsg = (msg) => {
   toast.error(msg, {
     position: "top-right",
     autoClose: 5000,
