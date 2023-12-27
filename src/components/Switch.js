@@ -1,4 +1,8 @@
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+
+import { BsEmojiSunglasses } from "react-icons/bs";
+import { IoMdMoon } from "react-icons/io";
+
+
 import React, { useState } from "react";
 
 const Switch = () => {
@@ -23,9 +27,9 @@ const Switch = () => {
         className="flex items-center p-2 mr-2 text-xs font-medium text-gray-700 bg-white rounded-lg border border-gray-200 toggle-dark-state-example hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
       >
         {darkMode ? (
-          <SunIcon className="fill-current h-4 w-4" />
+          <BsEmojiSunglasses className="text-yellow-300 text-xl" />
         ) : (
-          <MoonIcon className="fill-current h-4 w-4" />
+          <IoMdMoon className="text-green-300 text-xl" />
         )}
       </button>
     </div>
