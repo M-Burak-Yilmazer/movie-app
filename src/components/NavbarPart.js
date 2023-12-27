@@ -7,7 +7,8 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const NavbarPart = () => {
-  const { logout } = useContext(AuthContext);
+  const { logout, currentUser } = useContext(AuthContext);
+  console.log(currentUser);
   return (
     <Navbar fluid className=" h-[70px] p-3  items-center">
       <div>
@@ -22,7 +23,8 @@ const NavbarPart = () => {
           </span>
         </Link>
       </div>
-      <div className="flex md:order-2">
+      <div className="flex md:order-2 ">
+        <h1 className="">{currentUser.displayName}</h1>
         <Switch />
         <Dropdown
           arrowIcon={false}
@@ -51,7 +53,7 @@ const NavbarPart = () => {
             </Dropdown.Item>
           </Dropdown.Header>
 
-          <Dropdown.Item onClick={logout}>Sign out</Dropdown.Item>
+          <Dropdown.Item onClick={() => logout()}>Sign out</Dropdown.Item>
         </Dropdown>
       </div>
     </Navbar>

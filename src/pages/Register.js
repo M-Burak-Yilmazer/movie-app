@@ -14,19 +14,16 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [movies, setMovies] = useState([]);
-  const {createUser}=useContext(AuthContext)
-
+  const { createUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    createUser(email,password)
-
+    e.preventDefault();
+    const displayName = `${name} ${lastName}`;
+    createUser(email, password,displayName);
   };
-
 
   const apiKey = process.env.REACT_APP_API_KEY;
   const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=lord%of%the%rings`;
-
 
   const getMovies = (baseUrl) => {
     fetch(baseUrl)
@@ -44,7 +41,9 @@ function Register() {
         <img
           src={
             movies[0]
-              ? `https://image.tmdb.org/t/p/w500${movies[Math.round(Math.random()*2)].poster_path}`
+              ? `https://image.tmdb.org/t/p/w500${
+                  movies[Math.round(Math.random() * 2)].poster_path
+                }`
               : "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
           }
           alt=""
