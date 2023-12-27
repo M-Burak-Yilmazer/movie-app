@@ -36,7 +36,7 @@ function Home() {
 
   return (
     <>
-      <form onSubmit={handleSearch} className="w-[500px] mx-auto mt-5">
+      <form onSubmit={handleSearch} className="w-[500px] mx-auto mt-10">
         <label
           htmlFor="default-search"
           className="mb-2 mt-3 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -64,7 +64,7 @@ function Home() {
           <input
             type="search"
             id="default-search"
-            className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="block w-full mt-4 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Search Mockups, Logos..."
             required=""
             value={search}
@@ -79,15 +79,15 @@ function Home() {
         </div>
       </form>
 
-      <div className="text-center mt-3 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 p-3 justify-center items-center">
+      <div className="text-center pb-16  flex flex-wrap gap-6 mt-6 px-5">
         {movies.map((item) => (
           <div
             key={item.id}
-            className="w-[350px] h-[500px]   max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto text-center"
+            className="w-[350px] h-[530px]   max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto text-center"
           >
             <div>
               <img
-                className="w-[330px] h-[350px] mx-auto p-8 rounded-t-lg"
+                className="w-[350px] h-[350px] mx-auto p-8 rounded-t-lg"
                 src={
                   item.backdrop_path
                     ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
@@ -101,6 +101,10 @@ function Home() {
               <a href="#">
                 <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   {item.title}
+                </h5>
+                
+                <h5 className="text-sm font-semibold mt-3 tracking-tight text-gray-900 dark:text-white">
+                  IMDB : {item.vote_average}
                 </h5>
               </a>
             </div>

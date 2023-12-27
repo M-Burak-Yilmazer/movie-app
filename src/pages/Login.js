@@ -34,7 +34,7 @@ function Login() {
 
   return (
     <div className="flex justify-center">
-      <div className="form-image hidden md:block">
+      <div className="w-min-[100px] flex-1  mx-auto hidden md:block">
         <img
           src={
             movies[0]
@@ -53,6 +53,9 @@ function Login() {
             onSubmit={handleSubmit}
             className=" absolute inset-[2px] rounded-[8px] z-[10] form flex flex-col p-20"
           >
+            <h2 className="text-red-400 text-2xl font-[500] text-center mb-5 ]">
+            Login App
+            </h2>
             <div>
               <div className="mb-2 block">
                 <Label htmlFor="email2" value="Your email" />

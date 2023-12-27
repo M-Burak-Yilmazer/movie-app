@@ -35,8 +35,8 @@ const MovieCard = () => {
   console.log(newkey);
 
   return (
-    <div className="flex  dark:bg-slate-700 flex-col lg:flex-row justify-center items-center">
-      <div className="hidden sm:block ms-5  mt-5  flex-1    ">
+    <div className="flex h-screen dark:bg-zinc-800 flex-col lg:flex-row justify-center items-center">
+      <div className="hidden sm:block ms-5  mt-5 flex-1  text-center  ">
         <iframe
           width={500}
           height={350}

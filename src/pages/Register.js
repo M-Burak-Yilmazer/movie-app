@@ -54,8 +54,11 @@ function Register() {
         <div className="login-box">
           <form
             onSubmit={handleSubmit}
-            className=" absolute inset-[2px] rounded-[8px] z-[10] form flex flex-col p-20"
+            className=" absolute inset-[2px] rounded-[8px] z-[10] form flex flex-col p-10"
           >
+            <h2 className="text-red-400 text-2xl font-[500] text-center mb-5 ]">
+            Register App
+          </h2>
             <div>
               <div className="grid grid-flow-col text-purple-950 justify-stretch space-x-4">
                 <FloatingLabel

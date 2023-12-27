@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 
-  body {
-    @apply dark:bg-blue-950;
-  }
+ 
 
 
 @layer components {
