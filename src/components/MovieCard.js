@@ -42,7 +42,7 @@ const MovieCard = () => {
 
   return (
     <div className="flex justify-around h-screen dark:bg-zinc-800 flex-col pt-[80px] pb-[150px] lg:flex-row  items-center">
-      <div className="hidden sm:block ms-5  mt-5  text-center  ">
+      <div className="hidden md:block ms-5  mt-5  text-center  ">
         <iframe
           width={500}
           height={350}
@@ -54,7 +54,7 @@ const MovieCard = () => {
         />
       </div>
       <div className="flex flex-col gap-3 justify-center items-center text-center">
-        <div className="flex flex-col justify-center items-center mt-5">
+        <div className="flex-3 flex-col justify-center items-center mt-5">
           <div
             href="#"
             className="  flex items-center  bg-slate-50 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-2xl md:h-[400px] hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 min-w-[400px]"
@@ -77,7 +77,7 @@ const MovieCard = () => {
             </div>
           </div>
         </div>
-        <div className="w-[400px] sm:w-[600px] bg-slate-900  text-start  rounded">
+        <div className="flex-1 w-[400px] sm:w-[600px] bg-slate-900  text-start  rounded">
           <Carousel id={id} media={media} />
         </div>
       </div>
