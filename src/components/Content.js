@@ -4,16 +4,17 @@ import { useNavigate } from "react-router";
 const useStyles = makeStyles((theme) => ({
   badge: {
     fontSize: "14px",
-    height:"30px",
-    width:"30px", 
-    borderRadius:"50%",
-    padding:"10px"
+    height: "30px",
+    width: "30px",
+    borderRadius: "50%",
+    padding: "10px",
   },
 }));
 
 const Content = ({ item, media_type }) => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const roundedValue = parseFloat(item.vote_average.toFixed(1));
   return (
     <div
       onClick={() =>
@@ -29,7 +30,7 @@ const Content = ({ item, media_type }) => {
           horizontal: "right",
         }}
         sx={{ "& .MuiBadge-badge": { fontSize: 16, height: 25, minWidth: 25 } }}
-        badgeContent={item.vote_average}
+        badgeContent={roundedValue}
         color={item.vote_average > 6 ? "primary" : "error"}
         classes={{ badge: classes.badge }}
       />
