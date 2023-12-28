@@ -88,13 +88,13 @@ function TvSeries() {
         </div>
       </form>
       <h1 className="text-5xl mt-5  dark:text-white text-black text-center">
-        MOVIES
+        TV SERIES
       </h1>
 
       <div className="text-center mt-10 pb-16  flex flex-wrap items-center justify-around gap-6">
         {movies &&
           movies.map((item) => (
-            <Content key={item.id} media_type="movie" item={item} />
+            <Content key={item.id} media_type="tv" item={item} />
           ))}
       </div>
       <CustomPagination setPage={setPage} numOfPages={numOfPages} />
