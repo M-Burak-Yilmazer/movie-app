@@ -26,7 +26,7 @@ const NavbarPart = () => {
     <>
       <div
         onClick={() => window.scroll(0, 0)}
-        className="bg-slate-100 fixed cursor-pointer z-20 dark:bg-slate-900 w-full top-0 h-[70px] flex justify-center gap-10 sm:justify-around items-center"
+        className="ps-3 bg-slate-100 fixed cursor-pointer z-20 dark:bg-slate-900 w-full top-0 h-[70px] flex justify-center gap-10 sm:justify-around items-center"
       >
         <div>
           <Link to="/">

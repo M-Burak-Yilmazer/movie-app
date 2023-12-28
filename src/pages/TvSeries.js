@@ -44,8 +44,8 @@ function TvSeries() {
   console.log(movies);
 
   return (
-    <div>
-      <form onSubmit={handleSearch} className="w-[500px] mx-auto mt-10">
+    <div className="w-full h-screen">
+      <form onSubmit={handleSearch} className=" mx-auto mt-10">
         <label
           htmlFor="default-search"
           className="mb-2 mt-3 text-sm font-medium text-gray-900 sr-only dark:text-white"
