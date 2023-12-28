@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Container, Card, Col, Row } from "react-bootstrap";
 import Content from "../components/Content";
 import { Link, useNavigate } from "react-router-dom";
 import CustomPagination from "../components/CustomPagination";
+import { AuthContext } from "../context/AuthContext";
 
 function Home() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [numOfPages, setNumOfPages] = useState();
+  const {currentUser}=useContext(AuthContext)
 
-  const navigate = useNavigate();
+  
 
   const apiKey = process.env.REACT_APP_API_KEY;
   // const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`;
@@ -29,7 +31,7 @@ function Home() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (!search) {
+    if (!search && currentUser) {
       console.log("value yok");
       getMovies(baseUrl);
     } else {
