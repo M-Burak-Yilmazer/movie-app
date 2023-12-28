@@ -77,7 +77,7 @@ const MovieCard = () => {
             </div>
           </div>
         </div>
-        <div className="w-[400px] sm:w-[600px] bg-slate-900    rounded">
+        <div className="w-[400px] sm:w-[600px] bg-slate-900  text-start  rounded">
           <Carousel id={id} media={media} />
         </div>
       </div>
