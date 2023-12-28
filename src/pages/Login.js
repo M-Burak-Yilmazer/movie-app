@@ -14,7 +14,7 @@ function Login() {
   const [movies, setMovies] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signIn, signUpProvider } = useContext(AuthContext);
+  const { signIn, signUpProvider,forgotPassword } = useContext(AuthContext);
 
   const apiKey = process.env.REACT_APP_API_KEY;
   const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=the%godfather`;
@@ -84,7 +84,9 @@ function Login() {
               />
             </div>
             <div className="dark:text-orange-300 font-medium text-red-600 text-sm flex justify-between p-1">
-              <span>Forget Password</span>
+              <span onClick={() => forgotPassword(email)}>
+                Forget Password
+              </span>
               <NavLink to="/register"> Sign up</NavLink>
             </div>
 

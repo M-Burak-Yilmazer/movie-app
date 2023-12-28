@@ -4,9 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
-// ... (existing imports)
 
-// ... (existing imports)
 
 const NavbarPart = () => {
   const { logout, currentUser } = useContext(AuthContext);
@@ -43,7 +41,7 @@ const NavbarPart = () => {
         <div className="flex md:order-2 justify-center items-center">
           <div className="flex items-center me-3">
             <h1 className="lowercase text-md font-semibold dark:text-white">
-              {currentUser && currentUser.displayName}
+              {currentUser && currentUser?.displayName}
             </h1>
           </div>
           <Switch />

@@ -1,15 +1,16 @@
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../auth/firebase";
 import {
-    GoogleAuthProvider,
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { success, error, errorMsg } from "../helpers/Tostify";
 
 export const AuthContext = createContext();
@@ -29,10 +30,10 @@ const AuthContextProvider = ({ children }) => {
         password
       );
       await updateProfile(auth.currentUser, {
-        displayName,
+        displayName: displayName,
       });
+      await userTracker();
 
-      console.log(response);
       navigate("/");
       success("Registered to Movie App");
     } catch (error) {
@@ -72,25 +73,38 @@ const AuthContextProvider = ({ children }) => {
       }
     });
   };
-   const signUpProvider = () => {
-     
-     const provider = new GoogleAuthProvider();
-    
-     signInWithPopup(auth, provider)
-       .then((result) => {
-         console.log(result);
-         navigate("/");
-       })
-       .catch((error) => {
-         // Handle Errors here.
-         console.log(error);
-       });
-   };
+  const signUpProvider = () => {
+    const provider = new GoogleAuthProvider();
 
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result);
+        navigate("/");
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        console.log(error);
+      });
+  };
+  const forgotPassword = (email) => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Password reset email sent!
+        success("Please check your email");
+      })
+      .catch((error) => {
+        errorMsg(error.message);
+      });
+  };
 
-
-
-  const values = { createUser, signIn, logout, currentUser, signUpProvider };
+  const values = {
+    createUser,
+    signIn,
+    logout,
+    currentUser,
+    signUpProvider,
+    forgotPassword,
+  };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };

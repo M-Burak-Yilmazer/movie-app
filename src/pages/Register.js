@@ -19,7 +19,9 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const displayName = `${name}${lastName}`;
+    console.log(displayName);
     createUser(email, password, displayName);
+    
   };
 
   const apiKey = process.env.REACT_APP_API_KEY;
@@ -32,7 +34,7 @@ function Register() {
   };
   useEffect(() => {
     getMovies(searchUrl);
-  }, []);
+  }, [searchUrl]);
   console.log(movies);
 
   return (
@@ -114,7 +116,11 @@ function Register() {
               onClick={() => signUpProvider()}
             >
               Continue with Google
-              <img src="./google.png" style={{width:"20px" , marginLeft:"1rem"}} alt="w"/>
+              <img
+                src="./google.png"
+                style={{ width: "20px", marginLeft: "1rem" }}
+                alt="w"
+              />
             </Button>
           </form>
         </div>
