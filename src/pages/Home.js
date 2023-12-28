@@ -46,6 +46,7 @@ function Home() {
   }, [page]);
   console.log(movies);
 
+
   return (
     <div className="w-full ">
       <form onSubmit={handleSearch} className=" mx-auto mt-5 p-3">
@@ -94,10 +95,10 @@ function Home() {
         NOW TRENDS
       </h1>
 
-      <div className="text-center mt-5 pb-16  flex flex-wrap items-center justify-around gap-6">
+      <div className="text-center mt-5  pb-16  flex flex-wrap items-center justify-center gap-5 ">
         {movies &&
           movies.map((item) => (
-            <Content key={item.id} item={item} media_type={item.media_type} />
+            <Content key={item.id} item={item} vote={item.vote_average} media_type={item.media_type} />
           ))}
       </div>
       <CustomPagination setPage={setPage} numOfPages={numOfPages} />

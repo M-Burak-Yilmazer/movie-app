@@ -11,10 +11,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Content = ({ item, media_type }) => {
+const Content = ({ item, media_type, vote }) => {
   const classes = useStyles();
   const navigate = useNavigate();
-  const roundedValue = parseFloat(item.vote_average.toFixed(1));
+  const roundedValue = vote ? parseFloat(vote.toFixed(1)) : 0;
   return (
     <div
       onClick={() =>
