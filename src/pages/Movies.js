@@ -44,7 +44,7 @@ function Movies() {
   console.log(movies);
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full ">
       <form onSubmit={handleSearch} className=" mx-auto mt-10 p-3">
         <label
           htmlFor="default-search"
