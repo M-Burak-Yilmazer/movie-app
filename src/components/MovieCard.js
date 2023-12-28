@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import "./MovieCard.css";
@@ -7,20 +7,25 @@ import "./MovieCard.css";
 const MovieCard = () => {
   const { id } = useParams();
   console.log(id);
-
+  const location = useLocation();
+  const movieType = location.state?.from;
+  const media=location.state?.media
+ 
   const [movie, setMovie] = useState([]);
   const [key, setKey] = useState("");
 
   const apiKey = process.env.REACT_APP_API_KEY;
 
   const getMovie = () => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
+    fetch(`https://api.themoviedb.org/3/${media}/${id}?api_key=${apiKey}`)
       .then((response) => response.json())
       .then((res) => setMovie(res));
   };
 
   const getvideo = () => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`)
+    fetch(
+      `https://api.themoviedb.org/3/${media}/${id}/videos?api_key=${apiKey}&language=en-US`
+    )
       .then((response) => response.json())
       .then((res) => setKey(res.results[0].key));
   };
@@ -31,11 +36,10 @@ const MovieCard = () => {
   }, []);
   console.log(movie);
 
-  const newkey = `https://www.youtube.com/watch?v=${key}`;
-  console.log(newkey);
+
 
   return (
-    <div className="flex h-screen dark:bg-zinc-800 flex-col lg:flex-row justify-center items-center">
+    <div className="flex h-screen dark:bg-zinc-800 flex-col pt-[80px] pb-[150px] lg:flex-row justify-center items-center">
       <div className="hidden sm:block ms-5  mt-5 flex-1  text-center  ">
         <iframe
           width={500}
@@ -59,10 +63,10 @@ const MovieCard = () => {
           />
           <div className="flex-1 flex-col justify-between p-4 leading-normal">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {movie.original_title}
+              {movie.original_title || movie.name}
             </h5>
             <p className="mb-3 font-semibold line-clamp-3 md:line-clamp-none   text-gray-700 dark:text-gray-400">
-              {"Release Date : " + movie.release_date}
+              Release Date : {movie.release_date || movie.first_air_date}
             </p>
             <p className="mb-3  line-clamp-3 md:line-clamp-none  font-normal text-gray-700 dark:text-gray-400">
               {movie.overview}

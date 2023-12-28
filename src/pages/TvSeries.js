@@ -4,24 +4,26 @@ import Content from "../components/Content";
 import { Link, useNavigate } from "react-router-dom";
 import CustomPagination from "../components/CustomPagination";
 
-function Home() {
+function TvSeries() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-    const [numOfPages, setNumOfPages] = useState();
+  const [numOfPages, setNumOfPages] = useState();
 
   const navigate = useNavigate();
 
   const apiKey = process.env.REACT_APP_API_KEY;
   // const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`;
-  const baseUrl = `https://api.themoviedb.org/3/trending/all/day?api_key=${apiKey}&page=${page}`;
+  const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`;
   const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${search}`;
 
   const getMovies = (baseUrl) => {
     fetch(baseUrl)
       .then((res) => res.json())
-      .then((res) =>{ setMovies(res.results)
-       setNumOfPages(res.total_pages);});
+      .then((res) => {
+        setMovies(res.results);
+        setNumOfPages(res.total_pages);
+      });
   };
 
   const handleSearch = (e) => {
@@ -86,13 +88,13 @@ function Home() {
         </div>
       </form>
       <h1 className="text-5xl mt-5  dark:text-white text-black text-center">
-        NOW TRENDS
+        MOVIES
       </h1>
 
       <div className="text-center mt-10 pb-16  flex flex-wrap items-center justify-around gap-6">
         {movies &&
           movies.map((item) => (
-            <Content key={item.id} item={item} media_type={item.media_type} />
+            <Content key={item.id} media_type="movie" item={item} />
           ))}
       </div>
       <CustomPagination setPage={setPage} numOfPages={numOfPages} />
@@ -100,4 +102,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default TvSeries;
