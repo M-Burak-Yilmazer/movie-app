@@ -1,7 +1,18 @@
+import { Badge, makeStyles } from "@material-ui/core";
 import React from "react";
 import { useNavigate } from "react-router";
+const useStyles = makeStyles((theme) => ({
+  badge: {
+    fontSize: "14px",
+    height:"30px",
+    width:"30px", 
+    borderRadius:"50%",
+    padding:"10px"
+  },
+}));
 
 const Content = ({ item, media_type }) => {
+  const classes = useStyles();
   const navigate = useNavigate();
   return (
     <div
@@ -12,6 +23,16 @@ const Content = ({ item, media_type }) => {
       }
       className="hover:bg-white dark:bg-[#000000] dark:text-[#E50914] bg-slate-300 rounded cursor-pointer hover:text-black flex flex-col justify-around flex-wrap w-46 sm:w-[300px] sm:h-[550px]  p-[5px] m-5 my-[5px]   "
     >
+      <Badge
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        sx={{ "& .MuiBadge-badge": { fontSize: 16, height: 25, minWidth: 25 } }}
+        badgeContent={item.vote_average}
+        color={item.vote_average > 6 ? "primary" : "error"}
+        classes={{ badge: classes.badge }}
+      />
       <img
         className=" "
         src={
