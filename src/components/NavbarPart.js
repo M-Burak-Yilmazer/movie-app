@@ -26,17 +26,17 @@ const NavbarPart = () => {
     <>
       <div
         onClick={() => window.scroll(0, 0)}
-        className="ps-3 bg-slate-100 fixed cursor-pointer z-20 dark:bg-slate-900 w-full top-0 h-[70px] flex justify-center gap-10 sm:justify-around items-center"
+        className=" bg-slate-100 fixed cursor-pointer z-20 dark:bg-slate-900 w-full top-0 h-[70px] flex justify-center gap-10 sm:justify-between items-center p-5"
       >
         <div>
           <Link to="/">
-            <span className="self-center flex flex-row items-center whitespace-nowrap text-xl font-semibold dark:text-white">
+            <span className="self-center flex flex-row items-center text-3xl whitespace-nowrap text-xl font-semibold dark:text-white">
               <img
                 src="/favicon.ico"
                 className="mr-3 h-6 sm:h-9"
                 alt="Flowbite React Logo"
               />
-              Movie App
+              Moviefy
             </span>
           </Link>
         </div>

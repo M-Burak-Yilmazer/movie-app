@@ -46,7 +46,7 @@ function Home() {
 
   return (
     <div className="w-full ">
-      <form onSubmit={handleSearch} className=" mx-auto mt-10 p-3">
+      <form onSubmit={handleSearch} className=" mx-auto mt-5 p-3">
         <label
           htmlFor="default-search"
           className="mb-2 mt-3 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -74,7 +74,7 @@ function Home() {
           <input
             type="search"
             id="default-search"
-            className="block w-full mt-4 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="block w-full mt-1 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Search Movies..."
             required=""
             value={search}
@@ -88,11 +88,11 @@ function Home() {
           </button>
         </div>
       </form>
-      <h1 className="text-5xl mt-5  dark:text-white text-black text-center">
+      <h1 className="text-5xl mt-5 dark:text-[#E50914] dark:text-white text-black text-center ">
         NOW TRENDS
       </h1>
 
-      <div className="text-center mt-10 pb-16  flex flex-wrap items-center justify-around gap-6">
+      <div className="text-center mt-5 pb-16  flex flex-wrap items-center justify-around gap-6">
         {movies &&
           movies.map((item) => (
             <Content key={item.id} item={item} media_type={item.media_type} />

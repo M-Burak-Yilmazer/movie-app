@@ -45,7 +45,7 @@ function TvSeries() {
 
   return (
     <div className="w-full p-3">
-      <form onSubmit={handleSearch} className=" mx-auto mt-10">
+      <form onSubmit={handleSearch} className=" mx-auto mt-5">
         <label
           htmlFor="default-search"
           className="mb-2 mt-3 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -91,7 +91,7 @@ function TvSeries() {
         TV SERIES
       </h1>
 
-      <div className="text-center mt-10 pb-16  flex flex-wrap items-center justify-around gap-6">
+      <div className="text-center mt-5 pb-16  flex flex-wrap items-center justify-around gap-6">
         {movies &&
           movies.map((item) => (
             <Content key={item.id} media_type="tv" item={item} />
