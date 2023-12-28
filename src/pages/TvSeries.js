@@ -44,7 +44,7 @@ function TvSeries() {
   console.log(movies);
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen p-3">
       <form onSubmit={handleSearch} className=" mx-auto mt-10">
         <label
           htmlFor="default-search"

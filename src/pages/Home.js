@@ -46,7 +46,7 @@ function Home() {
 
   return (
     <div className="w-full h-screen">
-      <form onSubmit={handleSearch} className=" mx-auto mt-10">
+      <form onSubmit={handleSearch} className=" mx-auto mt-10 p-3">
         <label
           htmlFor="default-search"
           className="mb-2 mt-3 text-sm font-medium text-gray-900 sr-only dark:text-white"
