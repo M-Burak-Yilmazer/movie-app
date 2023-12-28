@@ -18,13 +18,15 @@ export default function CustomPagination({ setPage, numOfPages = 10 }) {
         display: "flex",
         justifyContent: "center",
         marginBottom: 50,
+        color:"blue"
       }}
     >
       
         <Pagination
+        className="text-white"
           onChange={(e) => handlePageChange(e.target.textContent)}
           count={numOfPages}
-          color="primary"
+          color="secondary" 
           hideNextButton
           hidePrevButton
         />

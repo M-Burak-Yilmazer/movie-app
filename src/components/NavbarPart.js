@@ -30,7 +30,7 @@ const NavbarPart = () => {
       >
         <div>
           <Link to="/">
-            <span className="self-center flex flex-row items-center text-3xl whitespace-nowrap text-xl font-semibold dark:text-white">
+            <span className="self-center flex flex-row items-center text-4xl whitespace-nowrap  font-semibold dark:text-white">
               <img
                 src="/favicon.ico"
                 className="mr-3 h-6 sm:h-9"
