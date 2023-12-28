@@ -22,7 +22,7 @@ const Content = ({ item, media_type }) => {
           state: { from: item.media_type, media: media_type },
         })
       }
-      className="hover:bg-white dark:bg-[#000000] dark:text-[#E50914] bg-slate-300 rounded cursor-pointer hover:text-black flex flex-col justify-around flex-wrap w-46 sm:w-[300px] sm:h-[550px]  p-[5px] m-5 my-[5px]   "
+      className="hover:bg-white dark:bg-[#000000] dark:text-[#E50914] bg-slate-300 rounded cursor-pointer hover:text-black flex flex-col justify-around flex-wrap w-46 sm:w-[250px] sm:h-[500px]  p-[5px] m-5 my-[5px]   "
     >
       <Badge
         anchorOrigin={{
@@ -35,7 +35,7 @@ const Content = ({ item, media_type }) => {
         classes={{ badge: classes.badge }}
       />
       <img
-        className=" "
+        className="h-90"
         src={
           item?.backdrop_path
             ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
