@@ -24,7 +24,10 @@ const NavbarPart = () => {
 
   return (
     <>
-      <Navbar className="bg-slate-100 fixed z-20 w-full top-0 h-[70px] flex justify-between p-3 items-center">
+      <Navbar
+        onClick={() => window.scroll(0, 0)}
+        className="bg-slate-100 fixed cursor-pointer z-20 w-full top-0 h-[70px] flex justify-between p-3 items-center"
+      >
         <div>
           <Link to="/">
             <span className="self-center flex flex-row items-center whitespace-nowrap text-xl font-semibold dark:text-white">

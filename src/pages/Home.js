@@ -8,20 +8,23 @@ function Home() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-    const [numOfPages, setNumOfPages] = useState();
+  const [numOfPages, setNumOfPages] = useState();
 
   const navigate = useNavigate();
 
   const apiKey = process.env.REACT_APP_API_KEY;
   // const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`;
   const baseUrl = `https://api.themoviedb.org/3/trending/all/day?api_key=${apiKey}&page=${page}`;
-  const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${search}`;
+  const searchUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${search}&page=${page}`;
+  // "https://api.themoviedb.org/3/search/multi?include_adult=false&language=en-US&page=1"
 
   const getMovies = (baseUrl) => {
     fetch(baseUrl)
       .then((res) => res.json())
-      .then((res) =>{ setMovies(res.results)
-       setNumOfPages(res.total_pages);});
+      .then((res) => {
+        setMovies(res.results);
+        setNumOfPages(res.total_pages);
+      });
   };
 
   const handleSearch = (e) => {

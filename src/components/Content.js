@@ -24,7 +24,7 @@ const Content = ({ item, media_type }) => {
         {item.title || item.name}
       </b>
       <span className="flex justify-between pb-2 px-2">
-        {item.media_type === "tv" ? "TV Series" : "Movie"}
+        {media_type === "tv" ? "TV Series" : "Movie"}
         <span className=" ">{item.first_air_date || item.release_date}</span>
       </span>
     </div>
