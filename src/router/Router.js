@@ -11,11 +11,13 @@ import NavbarPart from "../components/NavbarPart";
 import SimpleBottomNavigation from "../components/BottomNavbar";
 import Movies from "../pages/Movies";
 import TvSeries from "../pages/TvSeries";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Router = () => {
   return (
     <>
       <NavbarPart />
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
