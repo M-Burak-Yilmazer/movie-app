@@ -1,8 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Carousel from "./Carousel"
-
+import Carousel from "./Carousel";
 
 import "./MovieCard.css";
 
@@ -11,8 +10,9 @@ const MovieCard = () => {
   console.log(id);
   const location = useLocation();
   const movieType = location.state?.from;
-  const media=location.state?.media
- 
+  const media = location.state?.media;
+  const navigate = useNavigate();
+
   const [movie, setMovie] = useState([]);
   const [key, setKey] = useState("");
 
@@ -38,8 +38,6 @@ const MovieCard = () => {
   }, []);
   console.log(movie);
 
-
-
   return (
     <div className="flex justify-around h-screen dark:bg-zinc-800 flex-col pt-[80px] pb-[150px] lg:flex-row  items-center">
       <div className="hidden md:block ms-5  mt-5  text-center  ">
@@ -54,7 +52,13 @@ const MovieCard = () => {
         />
       </div>
       <div className="flex flex-col gap-3 justify-center items-center text-center">
-        <div className="flex-3 flex-col justify-center items-center mt-5">
+        <button
+          onClick={() => navigate(-1)}
+          className="bg-yellow-300 font-semibold text-stone-800 w-[100px] py-1 rounded-full mt-3  "
+        >
+          Back
+        </button>
+        <div className="flex-3 flex-col justify-center items-center ">
           <div
             href="#"
             className="  flex items-center  bg-slate-50 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-2xl md:h-[400px] hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 min-w-[400px]"
@@ -86,4 +90,4 @@ const MovieCard = () => {
 };
 
 export default MovieCard;
-  // <Carousel id={id} media={media} />;
+// <Carousel id={id} media={media} />;
