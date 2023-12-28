@@ -24,9 +24,9 @@ const NavbarPart = () => {
 
   return (
     <>
-      <Navbar
+      <div
         onClick={() => window.scroll(0, 0)}
-        className="bg-slate-100 fixed cursor-pointer z-20 w-full top-0 h-[70px] flex justify-around p-3 items-center"
+        className="bg-slate-100 fixed cursor-pointer z-20 dark:bg-slate-900 w-full top-0 h-[70px] flex justify-center gap-10 sm:justify-around items-center"
       >
         <div>
           <Link to="/">
@@ -75,7 +75,7 @@ const NavbarPart = () => {
             </Dropdown.Header>
           </Dropdown>
         </div>
-      </Navbar>
+      </div>
       <div className="h-[55px]"></div>
     </>
   );
