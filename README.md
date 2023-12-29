@@ -1,70 +1,8 @@
-# Getting Started with Create React App
+# Moviefy Movie App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### With this application, you can both be aware of new trendy content and have information about the films and TV shows you are curious about by doing research. A wide variety of features were used while preparing this project. Tailwind and material ui were used for styles. React-Router, Context Api structures and components were created. Authentication structure was also created with Google Firebase. Login and Register stages were authorised with Firebase. Pagination structure was used to display more content. Trends, Movies and Tv Series sections were created by carefully using the data provided by TMDB Api and search feature was added in each section.  While information about the relevant content is added to the Movie Detail section, the actors section offered by the API was displayed as a carousel. Youtube content was added as iframe. As a result, I wrote a long time, but it was a challenging and informative work for me, I hope you will benefit from it ...
+### [You can click](https://movies-app-firebase-mathias.netlify.app/)
+![movie app 1](https://github.com/M-Burak-Yilmazer/movie-app/assets/101402476/83082c40-a7d7-4655-a82f-83840da51e12)
+![movie app 2](https://github.com/M-Burak-Yilmazer/movie-app/assets/101402476/6843336d-29ce-442f-8eb0-57fff25874ad)
+![movie app 3](https://github.com/M-Burak-Yilmazer/movie-app/assets/101402476/910836b1-5ee9-40dd-b412-c7b03707418f)
+![movie app 4](https://github.com/M-Burak-Yilmazer/movie-app/assets/101402476/9a4877e4-9c39-48c8-8cfd-94699e08c015)
