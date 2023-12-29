@@ -94,12 +94,19 @@ function TvSeries() {
       </h1>
 
       <div className="text-center mt-5 pb-16  flex flex-wrap items-center justify-around gap-6">
-        {movies &&
+        {movies.length > 1 ? (
           movies.map((item) => (
             <Content key={item.id} media_type="tv" item={item} />
-          ))}
+          ))
+        ) : (
+          <div className="text-center text-3xl mt-10 text-red-700">
+            No Movies or Tv Show
+          </div>
+        )}
       </div>
-      <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+      {numOfPages > 1 && (
+        <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+      )}
     </div>
   );
 }

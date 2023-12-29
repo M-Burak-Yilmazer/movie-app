@@ -10,9 +10,7 @@ function Home() {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [numOfPages, setNumOfPages] = useState();
-  const {currentUser}=useContext(AuthContext)
-
-  
+  const { currentUser } = useContext(AuthContext);
 
   const apiKey = process.env.REACT_APP_API_KEY;
   // const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`;
@@ -46,9 +44,8 @@ function Home() {
   }, [page]);
   console.log(movies);
 
-
   return (
-    <div className="w-full ">
+    <div className="w-full h-min-screen">
       <form onSubmit={handleSearch} className=" mx-auto mt-5 p-3">
         <label
           htmlFor="default-search"
@@ -96,12 +93,22 @@ function Home() {
       </h1>
 
       <div className="text-center mt-5  pb-16  flex flex-wrap items-center justify-center gap-5 ">
-        {movies &&
+        {movies.length > 1 ? (
           movies.map((item) => (
-            <Content key={item.id} item={item} vote={item.vote_average} media_type={item.media_type} />
-          ))}
+            <Content
+              key={item.id}
+              item={item}
+              vote={item.vote_average}
+              media_type={item.media_type}
+            />
+          ))
+        ) : (
+          <div className="text-center text-3xl mt-10 text-red-700">
+            No Movies or Tv Show
+          </div>
+        )}
       </div>
-      <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+     {numOfPages>1 && <CustomPagination setPage={setPage} numOfPages={numOfPages} />}
     </div>
   );
 }
