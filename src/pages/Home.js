@@ -11,6 +11,7 @@ function Home() {
   const [page, setPage] = useState(1);
   const [numOfPages, setNumOfPages] = useState();
   const { currentUser } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
 
   const apiKey = process.env.REACT_APP_API_KEY;
   // const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`;
@@ -19,12 +20,15 @@ function Home() {
   // "https://api.themoviedb.org/3/search/multi?include_adult=false&language=en-US&page=1"
 
   const getMovies = (baseUrl) => {
+    setLoading(true);
     fetch(baseUrl)
       .then((res) => res.json())
       .then((res) => {
         setMovies(res.results);
         setNumOfPages(res.total_pages);
-      });
+      })
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
   };
 
   const handleSearch = (e) => {
@@ -93,7 +97,14 @@ function Home() {
       </h1>
 
       <div className="text-center mt-5  pb-16  flex flex-wrap items-center justify-center gap-5 ">
-        {movies.length > 1 ? (
+        {loading ? (
+          <div
+            className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-600 mt-52"
+            role="status"
+          >
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        ) : movies.length > 1 ? (
           movies.map((item) => (
             <Content
               key={item.id}
@@ -108,7 +119,9 @@ function Home() {
           </div>
         )}
       </div>
-     {numOfPages>1 && <CustomPagination setPage={setPage} numOfPages={numOfPages} />}
+      {numOfPages > 1 && (
+        <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+      )}
     </div>
   );
 }
